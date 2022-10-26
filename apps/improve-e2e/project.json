@@ -1,0 +1,28 @@
+{
+  "root": "apps/improve-e2e",
+  "sourceRoot": "apps/improve-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/improve-e2e/cypress.json",
+        "devServerTarget": "improve:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "improve:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/improve-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["improve"]
+}
