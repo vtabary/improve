@@ -7,7 +7,10 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "preversion": "keepachangelog display unreleased && keepachangelog confirm $npm_new_version --current-version $npm_old_version",
+    "version": "keepachangelog release $npm_new_version && git add ./CHANGELOG.md",
+    "postversion": "git push origin HEAD && git push origin v$npm_new_version"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +45,7 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.18.0",
     "@typescript-eslint/parser": "~5.18.0",
+    "@vtabary/keepachangelog-cli": "^0.4.0",
     "cypress": "^9.1.0",
     "eslint": "~8.12.0",
     "eslint-config-prettier": "8.1.0",
