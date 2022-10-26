@@ -1,0 +1,8 @@
+<ng-container *ngIf="theme; noTheme">
+  {{ theme }}
+</ng-container>
+
+<ng-template #noTheme>Aucun theme ne correspond</ng-template>
+
+<button type="button" (click)="onRefresh()">Refresh</button>
+<a routerLink="/themes">Retour</a>

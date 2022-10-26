@@ -1,0 +1,11 @@
+<h1>Ajouter une classe</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  Label <input type="type" formControlName="label" />
+  <span *ngIf="form.get('label')?.dirty && form.get('label')?.errors"
+    >Le libellé est requis et doit être unique.</span
+  >
+  <button type="submit">Ajouter</button>
+</form>
+
+<a routerLink="/themes">Retour</a>

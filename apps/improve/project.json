@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/improve",
   "sourceRoot": "apps/improve/src",
-  "prefix": "vtabary",
+  "prefix": "improve",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",

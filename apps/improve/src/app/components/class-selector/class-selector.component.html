@@ -1,0 +1,11 @@
+<ng-container *ngIf="classes.length > 0">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <select (change)="onChange()" formControlName="label">
+      <option *ngFor="let label of classes; let i = index" [ngValue]="label">
+        {{ label }}
+      </option>
+    </select>
+  </form>
+</ng-container>
+
+<a routerLink="/classes/add">Add a class</a>
