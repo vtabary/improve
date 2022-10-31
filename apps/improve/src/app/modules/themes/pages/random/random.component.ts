@@ -26,7 +26,7 @@ export class RandomComponent {
     this.theme = this.getRandom();
   }
 
-  public onRefresh() {
+  public onNewTheme() {
     this.theme = this.getRandom();
     this.cdr.detectChanges();
   }

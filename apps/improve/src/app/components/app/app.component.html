@@ -1,2 +1,11 @@
-<improve-class-selector></improve-class-selector>
-<router-outlet></router-outlet>
+<header class="sticky top-0 bg-orange-100 shadow p-4 flex flex-row">
+  <nav role="menu" class="grow">
+    <ul class="inline-block">
+      <li class="inline-block"><a routerLink="/themes">Thèmes</a></li>
+    </ul>
+  </nav>
+  <improve-class-selector></improve-class-selector>
+</header>
+<main class="p-4 grow">
+  <router-outlet></router-outlet>
+</main>

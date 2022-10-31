@@ -1,0 +1,7 @@
+:host {
+  @apply flex flex-col h-full w-full;
+}
+
+main {
+  @apply overflow-auto;
+}

@@ -29,6 +29,7 @@ export class ClassSelectorComponent {
     private currentClassService: CurrentClassService
   ) {
     this.classes = classDb.list();
+    this.currentClass = currentClassService.get();
   }
 
   public onSubmit(): void {
@@ -37,6 +38,7 @@ export class ClassSelectorComponent {
 
   public onChange(): void {
     this.currentClassService.set(this.form.value.label);
+    this.currentClass = this.currentClassService.get();
     location.reload();
   }
 }

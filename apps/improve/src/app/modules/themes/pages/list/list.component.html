@@ -1,11 +1,12 @@
-<form [formGroup]="form">
-  <div formArrayName="statuses">
-    <div *ngFor="let control of statuses.controls; index as i">
-      <input type="checkbox" [formControlName]="i" /> {{ list[i] }}
-    </div>
-  </div>
-
-  <button type="submit">Save</button>
-</form>
+<ul>
+  <li *ngFor="let item of list; index as i">
+    <span
+      [class.line-through]="used.includes(i)"
+      [class.text-gray-200]="used.includes(i)"
+    >
+      {{ item }}</span
+    >
+  </li>
+</ul>
 
 <a routerLink="/themes">Retour</a>

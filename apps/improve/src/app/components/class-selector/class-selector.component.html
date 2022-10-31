@@ -1,4 +1,4 @@
-<ng-container *ngIf="classes.length > 0">
+<ng-container *ngIf="classes.length > 0; else currentClassDisplay">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <select (change)="onChange()" formControlName="label">
       <option *ngFor="let label of classes; let i = index" [ngValue]="label">
@@ -8,4 +8,8 @@
   </form>
 </ng-container>
 
-<a routerLink="/classes/add">Add a class</a>
+<ng-template #currentClassDisplay>
+  {{ currentClass }}
+</ng-template>
+
+<a routerLink="/classes/add">Ajouter un cours</a>

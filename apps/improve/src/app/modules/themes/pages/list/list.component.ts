@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
-import { ThemesService } from '../../../database/public-api';
+import { ThemesService, UsedThemesService } from '../../../database/public-api';
 import { CurrentClassService } from '../../../database/services/current-class/current-class.service';
-import { ThemesHelperService } from '../../services/themes-helper/themes-helper.service';
 
 @Component({
   selector: 'improve-themes-list',
@@ -14,32 +12,21 @@ export class ListComponent implements OnInit {
   /**
    * @internal
    */
-  public form = new FormGroup({
-    statuses: new FormArray([]),
-  });
+  public list: string[] = [];
   /**
    * @internal
    */
-  public list: string[] = [];
+  public used: number[] = [];
 
   constructor(
     private themes: ThemesService,
-    private helper: ThemesHelperService,
+    private usedThemes: UsedThemesService,
     private currentClass: CurrentClassService
   ) {}
 
-  public ngOnInit(): void {
+  public async ngOnInit(): Promise<void> {
     this.list = this.themes.list();
 
-    this.list.forEach((_, index) => {
-      this.statuses.insert(
-        index,
-        new FormControl(this.helper.isUsed(this.currentClass.get(), index))
-      );
-    });
-  }
-
-  public get statuses(): FormArray {
-    return this.form.get('statuses') as FormArray;
+    this.used = this.usedThemes.list(this.currentClass.get());
   }
 }

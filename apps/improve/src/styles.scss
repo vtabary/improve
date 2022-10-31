@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  @apply h-full w-full;
+}
+
+a,
+.ui-link {
+  @apply underline;
+  @apply underline-offset-2;
+  @apply text-orange-500;
+
+  &:hover {
+    @apply text-orange-300;
+  }
+}
