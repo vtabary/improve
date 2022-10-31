@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@nrwl/angular": "13.10.6",
+    "feather-icons": "^4.29.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -41,6 +42,9 @@
     "@nrwl/jest": "13.10.6",
     "@nrwl/linter": "13.10.6",
     "@nrwl/workspace": "13.10.6",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.7",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.18.0",

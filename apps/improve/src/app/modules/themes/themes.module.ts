@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './pages/list/list.component';
 import { DatabaseModule } from '../database/database.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [RandomComponent, HomeComponent, ListComponent],
@@ -15,6 +16,7 @@ import { DatabaseModule } from '../database/database.module';
     ThemesRoutingModule,
     ReactiveFormsModule,
     DatabaseModule,
+    SharedModule,
   ],
 })
 export class ThemesModule {}

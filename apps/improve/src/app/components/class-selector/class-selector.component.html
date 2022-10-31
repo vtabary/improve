@@ -1,15 +1,22 @@
-<ng-container *ngIf="classes.length > 0; else currentClassDisplay">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <select (change)="onChange()" formControlName="label">
-      <option *ngFor="let label of classes; let i = index" [ngValue]="label">
-        {{ label }}
-      </option>
-    </select>
-  </form>
-</ng-container>
+<span class="mr-2">
+  <ng-container *ngIf="classes.length > 0; else currentClassDisplay">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <select (change)="onChange()" formControlName="label">
+        <option *ngFor="let label of classes; let i = index" [ngValue]="label">
+          {{ label }}
+        </option>
+      </select>
+    </form>
+  </ng-container>
 
-<ng-template #currentClassDisplay>
-  {{ currentClass }}
-</ng-template>
+  <ng-template #currentClassDisplay>
+    <span>{{ currentClass }}</span>
+  </ng-template>
+</span>
 
-<a routerLink="/classes/add">Ajouter un cours</a>
+<a routerLink="/classes/add"
+  ><improve-feather-icon
+    icon="settings"
+    title="Ajouter une classe"
+  ></improve-feather-icon
+></a>

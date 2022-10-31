@@ -1,12 +1,17 @@
-<ul>
-  <li *ngFor="let item of list; index as i">
-    <span
-      [class.line-through]="used.includes(i)"
-      [class.text-gray-200]="used.includes(i)"
-    >
-      {{ item }}</span
-    >
-  </li>
-</ul>
-
-<a routerLink="/themes">Retour</a>
+<improve-layout-with-buttons>
+  <ng-container content>
+    <ul class="" divide-y divide-gray-200>
+      <li *ngFor="let item of list; index as i">
+        <span
+          [class.line-through]="used.includes(i)"
+          [class.text-gray-200]="used.includes(i)"
+        >
+          {{ item }}</span
+        >
+      </li>
+    </ul>
+  </ng-container>
+  <ng-container buttons>
+    <a routerLink="/themes" class="grow text-center">Retour</a>
+  </ng-container>
+</improve-layout-with-buttons>

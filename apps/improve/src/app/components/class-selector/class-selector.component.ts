@@ -6,7 +6,7 @@ import { CurrentClassService } from '../../modules/database/services/current-cla
 @Component({
   selector: 'improve-class-selector',
   templateUrl: './class-selector.component.html',
-  styleUrls: ['./class-selector.component.css'],
+  styleUrls: ['./class-selector.component.scss'],
 })
 export class ClassSelectorComponent {
   /**

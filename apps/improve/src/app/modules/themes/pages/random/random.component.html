@@ -1,15 +1,16 @@
-<div class="h-full w-full flex flex-col">
-  <div class="grow flex items-center justify-center">
-    <div class="lg:text-2xl text-lg">
-      <ng-container *ngIf="theme; noTheme">
-        {{ theme }}
-      </ng-container>
+<improve-layout-with-buttons>
+  <ng-container content>
+    <div class="h-full w-full flex items-center justify-center">
+      <div class="lg:text-2xl text-lg">
+        <ng-container *ngIf="theme; noTheme">
+          {{ theme }}
+        </ng-container>
 
-      <ng-template #noTheme>Aucun thème disponible</ng-template>
+        <ng-template #noTheme>Aucun thème disponible</ng-template>
+      </div>
     </div>
-  </div>
-
-  <div class="flex flex-row">
+  </ng-container>
+  <ng-container buttons>
     <a routerLink="/themes" class="grow text-center">Retour</a>
     <button
       class="ui-link grow"
@@ -19,5 +20,5 @@
     >
       Nouveau thème
     </button>
-  </div>
-</div>
+  </ng-container>
+</improve-layout-with-buttons>
