@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { SharedModule } from '../shared/public-api';
+import { DatabaseModule } from '../database/public-api';
 import { ThemesRoutingModule } from './themes-routing.module';
 import { RandomComponent } from './pages/random/random.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './pages/list/list.component';
-import { DatabaseModule } from '../database/database.module';
-import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [RandomComponent, HomeComponent, ListComponent],

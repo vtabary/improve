@@ -1,0 +1,19 @@
+<improve-layout-with-buttons>
+  <ng-container title>Liste des phrases</ng-container>
+  <ng-container content>
+    <div class="px-2">
+      <ul class="divide-y divide-gray-200">
+        <li class="py-4 px-2" *ngFor="let item of list; index as i">
+          <span
+            [class.line-through]="used.includes(i)"
+            [class.text-gray-200]="used.includes(i)"
+            >{{ item }}</span
+          >
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+  <ng-container buttons>
+    <a routerLink="/articulations" class="grow text-center">Retour</a>
+  </ng-container>
+</improve-layout-with-buttons>

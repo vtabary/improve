@@ -4,10 +4,10 @@ import {
   Component,
 } from '@angular/core';
 import {
-  ThemesService,
-  UsedThemesService,
-  CurrentClassService,
+  ArticulationsService,
+  UsedArticulationsService,
 } from '../../../database/public-api';
+import { CurrentClassService } from '../../../database/public-api';
 import {
   ItemsHelperService,
   ITEMS_SERVICE,
@@ -15,13 +15,13 @@ import {
 } from '../../../shared/public-api';
 
 @Component({
-  selector: 'improve-themes-random',
+  selector: 'improve-articulations-random',
   templateUrl: './random.component.html',
   styleUrls: ['./random.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
-    { provide: ITEMS_SERVICE, useExisting: ThemesService },
-    { provide: USED_SERVICE, useExisting: UsedThemesService },
+    { provide: ITEMS_SERVICE, useExisting: ArticulationsService },
+    { provide: USED_SERVICE, useExisting: UsedArticulationsService },
     ItemsHelperService,
   ],
 })
@@ -39,7 +39,7 @@ export class RandomComponent {
     this.theme = this.getRandom();
   }
 
-  public onNewTheme() {
+  public onNewArticulation() {
     this.theme = this.getRandom();
     this.cdr.detectChanges();
   }

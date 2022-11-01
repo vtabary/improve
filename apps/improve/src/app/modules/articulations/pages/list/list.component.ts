@@ -1,15 +1,14 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
-  ThemesService,
-  UsedThemesService,
+  ArticulationsService,
   CurrentClassService,
+  UsedArticulationsService,
 } from '../../../database/public-api';
 
 @Component({
-  selector: 'improve-themes-list',
+  selector: 'improve-articulations-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent implements OnInit {
   /**
@@ -22,14 +21,13 @@ export class ListComponent implements OnInit {
   public used: number[] = [];
 
   constructor(
-    private themes: ThemesService,
-    private usedThemes: UsedThemesService,
+    private articulations: ArticulationsService,
+    private usedArticulations: UsedArticulationsService,
     private currentClass: CurrentClassService
   ) {}
 
   public ngOnInit(): void {
-    this.list = this.themes.list();
-
-    this.used = this.usedThemes.list(this.currentClass.get());
+    this.list = this.articulations.list();
+    this.used = this.usedArticulations.list(this.currentClass.get());
   }
 }

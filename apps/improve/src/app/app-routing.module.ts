@@ -12,6 +12,13 @@ const routes: Routes = [
       import('./modules/themes/themes.module').then((m) => m.ThemesModule),
   },
   {
+    path: 'articulations',
+    loadChildren: () =>
+      import('./modules/articulations/articulations.module').then(
+        (m) => m.ArticulationsModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: '/themes',
   },

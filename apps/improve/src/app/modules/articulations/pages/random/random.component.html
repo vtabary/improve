@@ -1,5 +1,5 @@
 <improve-layout-with-buttons>
-  <ng-container title>Thème aléatoire</ng-container>
+  <ng-container title>Phrase aléatoire</ng-container>
   <ng-container content>
     <div class="h-full w-full flex items-center justify-center">
       <div class="lg:text-2xl text-lg p-4">
@@ -7,7 +7,7 @@
           {{ theme }}
         </ng-container>
 
-        <ng-template #noTheme>Aucun thème disponible</ng-template>
+        <ng-template #noTheme>Aucune phrase disponible</ng-template>
       </div>
     </div>
   </ng-container>
@@ -16,10 +16,10 @@
     <button
       class="ui-link grow"
       type="button"
-      (click)="onNewTheme()"
+      (click)="onNewArticulation()"
       *ngIf="theme"
     >
-      Nouveau thème
+      Nouvelle phrase
     </button>
   </ng-container>
 </improve-layout-with-buttons>

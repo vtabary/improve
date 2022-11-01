@@ -1,20 +1,32 @@
-import { Injectable } from '@angular/core';
-import { ThemesService, UsedThemesService } from '../../../database/public-api';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class ThemesHelperService {
+export interface IItemsService {
+  list: () => string[];
+  get: (index: number) => string;
+}
+
+export interface IUsedService {
+  add: (currentClass: string, item: number) => void;
+  list: (currentClass: string) => number[];
+}
+
+export const ITEMS_SERVICE = new InjectionToken<IItemsService>('items-service');
+export const USED_SERVICE = new InjectionToken<IUsedService>('used-service');
+
+@Injectable()
+export class ItemsHelperService {
   private unusedIndexes: Record<string, number[]> = {};
 
   constructor(
-    private themes: ThemesService,
-    private usedThemes: UsedThemesService
+    @Inject(ITEMS_SERVICE)
+    private items: IItemsService,
+    @Inject(USED_SERVICE)
+    private used: IUsedService
   ) {}
 
-  public random(currentClass: string): { theme: string; index: number } {
+  public random(currentClass: string): { item: string; index: number } {
     const index = this.randomIndex(currentClass);
-    return { theme: this.themes.get(index), index };
+    return { item: this.items.get(index), index };
   }
 
   public isUsed(currentClass: string, index: number): boolean {
@@ -30,7 +42,7 @@ export class ThemesHelperService {
     this.setCachedUnused(currentClass, unused);
 
     // Add the index to unused list in local database
-    this.usedThemes.add(currentClass, index);
+    this.used.add(currentClass, index);
   }
 
   private randomIndex(currentClass: string): number {
@@ -39,8 +51,8 @@ export class ThemesHelperService {
   }
 
   private getUnusedIndexes(currentClass: string): number[] {
-    const usedIndexes: number[] = this.usedThemes.list(currentClass);
-    return Array.from(this.themes.list().keys()).filter(
+    const usedIndexes: number[] = this.used.list(currentClass);
+    return Array.from(this.items.list().keys()).filter(
       (index) => !usedIndexes.includes(index)
     );
   }

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ClassesService } from '../../modules/database/public-api';
-import { CurrentClassService } from '../../modules/database/services/current-class/current-class.service';
+import {
+  ClassesService,
+  CurrentClassService,
+} from '../../modules/database/public-api';
 
 @Component({
   selector: 'improve-class-selector',

@@ -4,7 +4,7 @@ import {
   Component,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CurrentClassService } from '../../modules/database/services/current-class/current-class.service';
+import { CurrentClassService } from '../../modules/database/public-api';
 
 @Component({
   selector: 'improve-root',

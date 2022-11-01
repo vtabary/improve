@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Add articulations exercices
 - Add a page to list classes
 
 ## [0.2.0] - 2022-10-31
