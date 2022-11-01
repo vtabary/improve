@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
+import { Observable } from 'rxjs';
+import { CurrentClassService } from '../../modules/database/services/current-class/current-class.service';
 
 @Component({
   selector: 'improve-root',
@@ -7,5 +13,27 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'improve';
+  /**
+   * @internal
+   */
+  public menuOpened = false;
+  /**
+   * @internal
+   */
+  public currentClass$: Observable<string>;
+
+  constructor(
+    private cdr: ChangeDetectorRef,
+    currentClassService: CurrentClassService
+  ) {
+    this.currentClass$ = currentClassService.change;
+  }
+
+  /**
+   * @internal
+   */
+  public onToggleMenu(): void {
+    this.menuOpened = !this.menuOpened;
+    this.cdr.detectChanges();
+  }
 }

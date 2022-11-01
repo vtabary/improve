@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddComponent,
+    data: {
+      title: 'Ajouter un cours',
+    },
   },
 ];
 

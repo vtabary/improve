@@ -1,12 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="h-full w-full">
   <improve-layout-with-buttons>
+    <ng-container title>Ajouter une classe</ng-container>
     <ng-container content>
-      <h1>Ajouter une classe</h1>
-
-      Label <input type="text" formControlName="label" />
-      <span *ngIf="form.get('label')?.dirty && form.get('label')?.errors"
-        >Le libellé est requis et doit être unique.</span
-      >
+      <div class="p-4">
+        Label <input type="text" formControlName="label" />
+        <span *ngIf="form.get('label')?.dirty && form.get('label')?.errors"
+          >Le libellé est requis et doit être unique.</span
+        >
+      </div>
     </ng-container>
     <ng-container buttons>
       <a routerLink="/themes" class="grow text-center">Retour</a>

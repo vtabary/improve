@@ -1,10 +1,17 @@
-<div class="h-full w-full flex flex-col">
-  <div class="grow overflow-y-auto overflow-x-hidden">
-    <ng-content></ng-content>
-    <ng-content select="[content]"></ng-content>
-  </div>
+<improve-layout>
+  <ng-container title>
+    <ng-content select="[title]"></ng-content>
+  </ng-container>
+  <ng-container content>
+    <div class="h-full w-full flex flex-col">
+      <div class="grow overflow-y-auto overflow-x-hidden">
+        <ng-content></ng-content>
+        <ng-content select="[content]"></ng-content>
+      </div>
 
-  <div class="flex flex-row">
-    <ng-content select="[buttons]"></ng-content>
-  </div>
-</div>
+      <div class="flex flex-row px-2 py-3 bg-gray-100">
+        <ng-content select="[buttons]"></ng-content>
+      </div>
+    </div>
+  </ng-container>
+</improve-layout>
