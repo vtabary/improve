@@ -1,0 +1,29 @@
+<improve-layout-with-buttons>
+  <ng-container title>Liste des classes</ng-container>
+  <ng-container content>
+    <div class="px-2">
+      <ul
+        class="divide-y divide-gray-200"
+        *ngIf="currentClass$ | async as currentClass"
+      >
+        <li class="py-4 px-2" *ngFor="let item of classList">
+          <button
+            type="button"
+            class="ui-link mr-1"
+            (click)="onSelectCurrent(item)"
+          >
+            {{ item }}
+          </button>
+          <span *ngIf="currentClass === item" class="text-gray-200"
+            >(courant)</span
+          >
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+  <ng-container buttons>
+    <a routerLink="/classes/add" class="grow text-center ui-link"
+      >Ajouter un cours</a
+    >
+  </ng-container>
+</improve-layout-with-buttons>

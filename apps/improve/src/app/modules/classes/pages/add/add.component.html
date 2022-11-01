@@ -4,13 +4,15 @@
     <ng-container content>
       <div class="p-4">
         Label <input type="text" formControlName="label" />
-        <span *ngIf="form.get('label')?.dirty && form.get('label')?.errors"
+        <span
+          *ngIf="form.get('label')?.dirty && form.get('label')?.errors"
+          class="text-red-700"
           >Le libellé est requis et doit être unique.</span
         >
       </div>
     </ng-container>
     <ng-container buttons>
-      <a routerLink="/themes" class="grow text-center">Retour</a>
+      <a routerLink="/classes" class="grow text-center">Retour</a>
       <button type="submit" class="grow text-center ui-link">Ajouter</button>
     </ng-container>
   </improve-layout-with-buttons>

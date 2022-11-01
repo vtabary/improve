@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ClassesService } from '../../../database/public-api';
 
 const labelMustBeUnique = (labels: string[]): ValidatorFn => {
@@ -41,7 +42,7 @@ export class AddComponent {
     ]),
   });
 
-  constructor(private classes: ClassesService) {}
+  constructor(private classes: ClassesService, private router: Router) {}
 
   public onSubmit(): void {
     console.log(this.form.errors, this.form.valid);
@@ -50,5 +51,6 @@ export class AddComponent {
     }
 
     this.classes.add(this.form.value.label);
+    this.router.navigateByUrl('/classes');
   }
 }

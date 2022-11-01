@@ -48,7 +48,7 @@
               tabindex="-1"
             >
               <a
-                routerLink="/classes/add"
+                routerLink="/classes"
                 class="block px-4 py-2 text-sm text-gray-700"
                 role="menuitem"
                 tabindex="-1"
@@ -68,38 +68,14 @@
           (click)="onToggleMenu()"
         >
           <span class="sr-only">Ouvrir le menu principal</span>
-          <svg
-            class="block h-6 w-6"
-            xmlns="http://www.w3.org/2000/svg"
+          <improve-feather-icon
             *ngIf="!menuOpened"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-          <svg
-            class="h-6 w-6"
+            icon="menu"
+          ></improve-feather-icon>
+          <improve-feather-icon
             *ngIf="menuOpened"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+            icon="x"
+          ></improve-feather-icon>
         </button>
       </div>
     </div>
@@ -110,6 +86,7 @@
     <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
       <a
         routerLink="/themes"
+        (click)="onToggleMenu()"
         routerLinkActive="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
         class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
         >Thèmes</a
@@ -121,7 +98,7 @@
           Cours : {{ currentClass$ | async }}
         </div>
         <a
-          routerLink="/classes/add"
+          routerLink="/classes"
           (click)="onToggleMenu()"
           class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
         >
