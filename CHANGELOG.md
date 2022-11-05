@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added random and list for Improvisation categories
+- Add source to themes and articulation sentences
+
+### Fixed
+
+- Fix some links in back links
+
 ## [0.3.1] - 2022-11-01
 
 ### Foxed

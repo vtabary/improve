@@ -3,6 +3,7 @@ import {
   ThemesService,
   UsedThemesService,
   CurrentClassService,
+  ITheme,
 } from '../../../database/public-api';
 
 @Component({
@@ -15,7 +16,7 @@ export class ListComponent implements OnInit {
   /**
    * @internal
    */
-  public list: string[] = [];
+  public list: ITheme[] = [];
   /**
    * @internal
    */

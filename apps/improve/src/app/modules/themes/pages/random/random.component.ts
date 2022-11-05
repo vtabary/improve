@@ -7,6 +7,7 @@ import {
   ThemesService,
   UsedThemesService,
   CurrentClassService,
+  ITheme,
 } from '../../../database/public-api';
 import {
   ItemsHelperService,
@@ -29,10 +30,10 @@ export class RandomComponent {
   /**
    * @internal
    */
-  public theme?: string;
+  public theme?: ITheme;
 
   constructor(
-    private itemsHelper: ItemsHelperService,
+    private itemsHelper: ItemsHelperService<ITheme>,
     private currentClass: CurrentClassService,
     private cdr: ChangeDetectorRef
   ) {
@@ -44,7 +45,7 @@ export class RandomComponent {
     this.cdr.detectChanges();
   }
 
-  private getRandom(): string {
+  private getRandom(): ITheme {
     const result = this.itemsHelper.random(this.currentClass.get());
     this.itemsHelper.setAsUsed(this.currentClass.get(), result.index);
 

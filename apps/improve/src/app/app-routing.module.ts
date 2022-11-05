@@ -2,6 +2,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'articulations',
+    loadChildren: () =>
+      import('./modules/articulations/articulations.module').then(
+        (m) => m.ArticulationsModule
+      ),
+  },
+  {
+    path: 'categories',
+    loadChildren: () =>
+      import('./modules/categories/categories.module').then(
+        (m) => m.CategoriesModule
+      ),
+  },
+  {
     path: 'classes',
     loadChildren: () =>
       import('./modules/classes/classes.module').then((m) => m.ClassesModule),
@@ -10,13 +24,6 @@ const routes: Routes = [
     path: 'themes',
     loadChildren: () =>
       import('./modules/themes/themes.module').then((m) => m.ThemesModule),
-  },
-  {
-    path: 'articulations',
-    loadChildren: () =>
-      import('./modules/articulations/articulations.module').then(
-        (m) => m.ArticulationsModule
-      ),
   },
   {
     path: '**',

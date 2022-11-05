@@ -1,8 +1,8 @@
-import { Inject, Injectable, InjectionToken } from '@angular/core';
+import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 
-export interface IItemsService {
-  list: () => string[];
-  get: (index: number) => string;
+export interface IItemsService<T> {
+  list: () => T[];
+  get: (index: number) => T;
 }
 
 export interface IUsedService {
@@ -10,21 +10,24 @@ export interface IUsedService {
   list: (currentClass: string) => number[];
 }
 
-export const ITEMS_SERVICE = new InjectionToken<IItemsService>('items-service');
+export const ITEMS_SERVICE = new InjectionToken<IItemsService<unknown>>(
+  'items-service'
+);
 export const USED_SERVICE = new InjectionToken<IUsedService>('used-service');
 
 @Injectable()
-export class ItemsHelperService {
+export class ItemsHelperService<T = unknown> {
   private unusedIndexes: Record<string, number[]> = {};
 
   constructor(
     @Inject(ITEMS_SERVICE)
-    private items: IItemsService,
+    private items: IItemsService<T>,
+    @Optional()
     @Inject(USED_SERVICE)
-    private used: IUsedService
+    private used: IUsedService | undefined
   ) {}
 
-  public random(currentClass: string): { item: string; index: number } {
+  public random(currentClass: string): { item: T; index: number } {
     const index = this.randomIndex(currentClass);
     return { item: this.items.get(index), index };
   }
@@ -42,7 +45,7 @@ export class ItemsHelperService {
     this.setCachedUnused(currentClass, unused);
 
     // Add the index to unused list in local database
-    this.used.add(currentClass, index);
+    this.used?.add(currentClass, index);
   }
 
   private randomIndex(currentClass: string): number {
@@ -51,7 +54,7 @@ export class ItemsHelperService {
   }
 
   private getUnusedIndexes(currentClass: string): number[] {
-    const usedIndexes: number[] = this.used.list(currentClass);
+    const usedIndexes: number[] = this.used?.list(currentClass) || [];
     return Array.from(this.items.list().keys()).filter(
       (index) => !usedIndexes.includes(index)
     );

@@ -1,0 +1,5 @@
+<ng-container *ngIf="item">
+  <span class="font-medium block p-2">{{ item.label }}</span>
+  <span class="pl-4 text-gray-600 block py-2">{{ item.description }}</span>
+  <a [href]="item.source" class="text-gray-400 block">{{ item.source }}</a>
+</ng-container>

@@ -1,0 +1,9 @@
+<ng-container *ngIf="item">
+  <span
+    class="font-medium block p-2"
+    [class.line-through]="used"
+    [class.text-gray-200]="used"
+    >{{ item.phrase }}</span
+  >
+  <a [href]="item.source" class="text-gray-400 block text-sm">Source</a>
+</ng-container>

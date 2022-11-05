@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {
   ArticulationsService,
   CurrentClassService,
+  IArticulation,
   UsedArticulationsService,
 } from '../../../database/public-api';
 
@@ -14,7 +15,7 @@ export class ListComponent implements OnInit {
   /**
    * @internal
    */
-  public list: string[] = [];
+  public list: IArticulation[] = [];
   /**
    * @internal
    */

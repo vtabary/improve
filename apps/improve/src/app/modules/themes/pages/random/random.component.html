@@ -4,7 +4,7 @@
     <div class="h-full w-full flex items-center justify-center">
       <div class="lg:text-2xl text-lg p-4">
         <ng-container *ngIf="theme; noTheme">
-          {{ theme }}
+          <improve-themes-item [item]="theme"></improve-themes-item>
         </ng-container>
 
         <ng-template #noTheme>Aucun thème disponible</ng-template>

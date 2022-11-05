@@ -8,9 +8,10 @@ import { ThemesRoutingModule } from './themes-routing.module';
 import { RandomComponent } from './pages/random/random.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
-  declarations: [RandomComponent, HomeComponent, ListComponent],
+  declarations: [RandomComponent, HomeComponent, ListComponent, ItemComponent],
   imports: [
     CommonModule,
     ThemesRoutingModule,

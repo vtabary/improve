@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 import {
   ArticulationsService,
+  IArticulation,
   UsedArticulationsService,
 } from '../../../database/public-api';
 import { CurrentClassService } from '../../../database/public-api';
@@ -29,22 +30,22 @@ export class RandomComponent {
   /**
    * @internal
    */
-  public theme?: string;
+  public articulation?: IArticulation;
 
   constructor(
-    private itemsHelper: ItemsHelperService,
+    private itemsHelper: ItemsHelperService<IArticulation>,
     private currentClass: CurrentClassService,
     private cdr: ChangeDetectorRef
   ) {
-    this.theme = this.getRandom();
+    this.articulation = this.getRandom();
   }
 
   public onNewArticulation() {
-    this.theme = this.getRandom();
+    this.articulation = this.getRandom();
     this.cdr.detectChanges();
   }
 
-  private getRandom(): string {
+  private getRandom(): IArticulation {
     const result = this.itemsHelper.random(this.currentClass.get());
     this.itemsHelper.setAsUsed(this.currentClass.get(), result.index);
 
