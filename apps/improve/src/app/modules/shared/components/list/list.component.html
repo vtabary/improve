@@ -1,0 +1,20 @@
+<improve-layout-with-buttons>
+  <ng-container title><ng-content select="[title]"></ng-content></ng-container>
+  <ng-container content>
+    <div class="px-2">
+      <ul class="divide-y divide-gray-200" *ngIf="itemComponent">
+        <li class="py-4 px-2" *ngFor="let item of list; index as i">
+          <ng-container
+            *ngTemplateOutlet="
+              itemComponent;
+              context: { item: item, index: i, $implicit: item }
+            "
+          ></ng-container>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+  <ng-container buttons>
+    <a [routerLink]="['..']" class="grow text-center">Retour</a>
+  </ng-container>
+</improve-layout-with-buttons>

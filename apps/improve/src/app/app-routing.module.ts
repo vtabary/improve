@@ -21,6 +21,11 @@ const routes: Routes = [
       import('./modules/classes/classes.module').then((m) => m.ClassesModule),
   },
   {
+    path: 'sounds',
+    loadChildren: () =>
+      import('./modules/sounds/sounds.module').then((m) => m.SoundsModule),
+  },
+  {
     path: 'themes',
     loadChildren: () =>
       import('./modules/themes/themes.module').then((m) => m.ThemesModule),

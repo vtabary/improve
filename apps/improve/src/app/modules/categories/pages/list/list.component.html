@@ -1,15 +1,6 @@
-<improve-layout-with-buttons>
+<improve-list [list]="list">
   <ng-container title>Liste des catégories</ng-container>
-  <ng-container content>
-    <div class="px-2">
-      <ul class="divide-y divide-gray-200">
-        <li class="py-4 px-2" *ngFor="let item of list; index as i">
-          <improve-categories-item [item]="item"></improve-categories-item>
-        </li>
-      </ul>
-    </div>
-  </ng-container>
-  <ng-container buttons>
-    <a routerLink="/categories" class="grow text-center">Retour</a>
-  </ng-container>
-</improve-layout-with-buttons>
+  <ng-template #item let-item="item">
+    <improve-categories-item [item]="item"></improve-categories-item>
+  </ng-template>
+</improve-list>

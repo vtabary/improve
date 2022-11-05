@@ -14,3 +14,4 @@ export {
   CategoriesService,
   ICategory,
 } from './services/categories/categories.service';
+export { ISound, SoundsService } from './services/sounds/sounds.service';

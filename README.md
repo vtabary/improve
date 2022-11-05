@@ -4,8 +4,11 @@ A tool to help to improve
 
 ## TODO
 
-- Articulation exercices
-- Sound box
+- Free musics
+- Training exercices
+- Add search input in lists
+- Add some tools in sounds : repeat mode, update player design, ...
+- Add specs in code
 
 ## Credits
 
