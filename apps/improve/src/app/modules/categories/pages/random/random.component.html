@@ -1,25 +1,7 @@
-<improve-layout-with-buttons>
+<improve-random>
   <ng-container title>Catégorie aléatoire</ng-container>
-  <ng-container content>
-    <div class="h-full w-full">
-      <div class="lg:text-2xl text-lg">
-        <ng-container *ngIf="category; noCategory">
-          <improve-categories-item [item]="category"></improve-categories-item>
-        </ng-container>
 
-        <ng-template #noCategory>Aucune catégorie disponible</ng-template>
-      </div>
-    </div>
-  </ng-container>
-  <ng-container buttons>
-    <a routerLink="/categories" class="grow text-center">Retour</a>
-    <button
-      class="ui-link grow"
-      type="button"
-      (click)="onNewCategory()"
-      *ngIf="category"
-    >
-      Nouvelle catégorie
-    </button>
-  </ng-container>
-</improve-layout-with-buttons>
+  <ng-template #item let-item="item">
+    <improve-categories-item [item]="item"></improve-categories-item>
+  </ng-template>
+</improve-random>

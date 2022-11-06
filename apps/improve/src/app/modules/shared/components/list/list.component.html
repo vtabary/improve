@@ -1,18 +1,37 @@
 <improve-layout-with-buttons>
   <ng-container title><ng-content select="[title]"></ng-content></ng-container>
   <ng-container content>
-    <div class="px-2">
-      <ul class="divide-y divide-gray-200" *ngIf="itemComponent">
-        <li class="py-4 px-2" *ngFor="let item of list; index as i">
-          <ng-container
-            *ngTemplateOutlet="
-              itemComponent;
-              context: { item: item, index: i, $implicit: item }
-            "
-          ></ng-container>
-        </li>
-      </ul>
+    <div class="h-full flex flex-col">
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSearch()"
+        class="w-full"
+        *ngIf="searchKeys.length > 0"
+      >
+        <input
+          type="text"
+          formControlName="search"
+          class="w-full border-x-0 border-t-0 bg-gray-50 placeholder:text-gray-700"
+          placeholder="Recherche"
+        />
+      </form>
+      <div class="grow overflow-y-auto overflow-x-hidden">
+        <ul
+          class="divide-y divide-gray-200 mx-2"
+          *ngIf="itemComponent && currentList.length > 0; else noResult"
+        >
+          <li class="py-4 px-2" *ngFor="let item of currentList; index as i">
+            <ng-container
+              *ngTemplateOutlet="
+                itemComponent;
+                context: { item: item, index: i, $implicit: item }
+              "
+            ></ng-container>
+          </li>
+        </ul>
+      </div>
     </div>
+    <ng-template #noResult>Aucun résultat</ng-template>
   </ng-container>
   <ng-container buttons>
     <a [routerLink]="['..']" class="grow text-center">Retour</a>

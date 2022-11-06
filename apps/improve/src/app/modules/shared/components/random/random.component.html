@@ -1,0 +1,30 @@
+<improve-layout-with-buttons>
+  <ng-container title><ng-content select="[title]"></ng-content></ng-container>
+  <ng-container content>
+    <div class="h-full w-full flex items-center justify-center">
+      <div class="lg:text-2xl text-lg p-4" *ngIf="itemComponent">
+        <ng-container *ngIf="item; noItem">
+          <ng-container
+            *ngTemplateOutlet="
+              itemComponent;
+              context: { item: item, $implicit: item }
+            "
+          ></ng-container>
+        </ng-container>
+
+        <ng-template #noItem>Aucune élément disponible</ng-template>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container buttons>
+    <a [routerLink]="['..']" class="grow text-center">Retour</a>
+    <button
+      class="ui-link grow"
+      type="button"
+      (click)="onNewItem()"
+      *ngIf="item"
+    >
+      Nouveau
+    </button>
+  </ng-container>
+</improve-layout-with-buttons>

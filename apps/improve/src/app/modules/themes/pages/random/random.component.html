@@ -1,25 +1,7 @@
-<improve-layout-with-buttons>
+<improve-random>
   <ng-container title>Thème aléatoire</ng-container>
-  <ng-container content>
-    <div class="h-full w-full flex items-center justify-center">
-      <div class="lg:text-2xl text-lg p-4">
-        <ng-container *ngIf="theme; noTheme">
-          <improve-themes-item [item]="theme"></improve-themes-item>
-        </ng-container>
 
-        <ng-template #noTheme>Aucun thème disponible</ng-template>
-      </div>
-    </div>
-  </ng-container>
-  <ng-container buttons>
-    <a routerLink="/themes" class="grow text-center">Retour</a>
-    <button
-      class="ui-link grow"
-      type="button"
-      (click)="onNewTheme()"
-      *ngIf="theme"
-    >
-      Nouveau thème
-    </button>
-  </ng-container>
-</improve-layout-with-buttons>
+  <ng-template #item let-item="item">
+    <improve-themes-item [item]="item"></improve-themes-item>
+  </ng-template>
+</improve-random>
