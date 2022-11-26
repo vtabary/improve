@@ -1,0 +1,8 @@
+<audio controls class="w-full">
+  <source
+    *ngFor="let source of sources"
+    [src]="source.url"
+    [type]="source.type"
+  />
+  <span>Lecture impossible</span>
+</audio>

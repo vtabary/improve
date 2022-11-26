@@ -45,7 +45,6 @@ export class AddComponent {
   constructor(private classes: ClassesService, private router: Router) {}
 
   public onSubmit(): void {
-    console.log(this.form.errors, this.form.valid);
     if (!this.form.valid) {
       return;
     }

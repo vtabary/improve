@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ISound } from '../../../database/public-api';
 
 @Component({
@@ -9,4 +10,14 @@ import { ISound } from '../../../database/public-api';
 export class ItemComponent {
   @Input()
   public item: ISound | null = null;
+
+  @Output()
+  public get askPlay(): Observable<void> {
+    return this.play$.asObservable();
+  }
+
+  /**
+   * @internal
+   */
+  public play$ = new EventEmitter<void>();
 }

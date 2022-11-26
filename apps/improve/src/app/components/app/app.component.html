@@ -14,27 +14,33 @@
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
             <a
-              routerLink="/themes"
-              routerLinkActive="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >Thèmes</a
-            >
-            <a
               routerLink="/categories"
-              routerLinkActive="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              routerLinkActive="ui-menu-entry--active"
+              class="ui-menu-entry"
               >Catégories</a
             >
             <a
+              routerLink="/themes"
+              routerLinkActive="ui-menu-entry--active"
+              class="ui-menu-entry"
+              >Thèmes</a
+            >
+            <a
+              routerLink="/emotions"
+              routerLinkActive="ui-menu-entry--active"
+              class="ui-menu-entry"
+              >Emotions</a
+            >
+            <a
               routerLink="/sounds"
-              routerLinkActive="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              routerLinkActive="ui-menu-entry--active"
+              class="ui-menu-entry"
               >Sons</a
             >
             <a
               routerLink="/articulations"
-              routerLinkActive="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              routerLinkActive="ui-menu-entry--active"
+              class="ui-menu-entry"
               >Articulations</a
             >
           </div>
@@ -103,31 +109,38 @@
   <div *ngIf="menuOpened" class="md:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
       <a
+        routerLink="/categories"
+        (click)="onToggleMenu()"
+        routerLinkActive="ui-burger-menu-entry--active"
+        class="ui-burger-menu-entry"
+        >Catégories</a
+      >
+      <a
         routerLink="/themes"
         (click)="onToggleMenu()"
-        routerLinkActive="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        routerLinkActive="ui-burger-menu-entry--active"
+        class="ui-burger-menu-entry"
         >Thèmes</a
       >
       <a
-        routerLink="/categories"
+        routerLink="/emotions"
         (click)="onToggleMenu()"
-        routerLinkActive="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-        >Catégories</a
+        routerLinkActive="ui-burger-menu-entry--active"
+        class="ui-burger-menu-entry"
+        >Emotions</a
       >
       <a
         routerLink="/sounds"
         (click)="onToggleMenu()"
-        routerLinkActive="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        routerLinkActive="ui-burger-menu-entry--active"
+        class="ui-burger-menu-entry"
         >Sons</a
       >
       <a
         routerLink="/articulations"
         (click)="onToggleMenu()"
-        routerLinkActive="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+        routerLinkActive="ui-burger-menu-entry--active"
+        class="ui-burger-menu-entry"
         >Articulations</a
       >
     </div>

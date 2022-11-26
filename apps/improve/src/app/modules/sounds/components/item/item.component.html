@@ -1,9 +1,9 @@
 <ng-container *ngIf="item">
-  <span class="font-medium block p-2">{{ item.label }}</span>
-  <span class="pl-4 text-gray-600 block py-2">
-    <audio controls [src]="item.url">
-      <span>Lecture impossible</span>
-    </audio>
-  </span>
+  <span class="font-medium block p-2"
+    >{{ item.label }}
+    <button type="button" class="ui-link" (click)="play$.emit()">
+      Lire
+    </button></span
+  >
   <a [href]="item.source" class="text-gray-400 block" target="_blank">Source</a>
 </ng-container>

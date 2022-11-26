@@ -1,0 +1,6 @@
+<improve-list [list]="list" [searchKeys]="['emotion', 'categories']">
+  <ng-container title>Liste des émotions</ng-container>
+  <ng-template #item let-item="item">
+    <improve-emotions-item [item]="item"></improve-emotions-item>
+  </ng-template>
+</improve-list>

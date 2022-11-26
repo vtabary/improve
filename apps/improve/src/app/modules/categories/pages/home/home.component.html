@@ -1,11 +1,14 @@
 <improve-layout>
   <ng-container title>Catégories</ng-container>
   <ng-container content>
-    <div class="p-4">
-      <a class="px-2 py-4 block" routerLink="/categories/list"
-        >Liste complète</a
-      >
-      <a class="px-2 py-4 block" routerLink="/categories/random">Aléatoire</a>
+    <div class="ui-card-container">
+      <a class="ui-card-link" routerLink="/categories/list">Liste complète</a>
+      <a class="ui-card-link" routerLink="/categories/random">Aléatoire</a>
     </div>
   </ng-container>
 </improve-layout>
+
+<div class="ui-card-container">
+  <a class="ui-card-link" routerLink="/themes/random">Aléatoire</a>
+  <a class="ui-card-link" routerLink="/themes/list">Liste complète</a>
+</div>

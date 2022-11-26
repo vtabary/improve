@@ -15,3 +15,7 @@ export {
   ICategory,
 } from './services/categories/categories.service';
 export { ISound, SoundsService } from './services/sounds/sounds.service';
+export {
+  IEmotion,
+  EmotionsService,
+} from './services/emotions/emotions.service';

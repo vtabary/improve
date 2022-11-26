@@ -2,6 +2,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () =>
+      import('./modules/home/home.module').then((m) => m.HomeModule),
+  },
+  {
     path: 'articulations',
     loadChildren: () =>
       import('./modules/articulations/articulations.module').then(
@@ -19,6 +24,13 @@ const routes: Routes = [
     path: 'classes',
     loadChildren: () =>
       import('./modules/classes/classes.module').then((m) => m.ClassesModule),
+  },
+  {
+    path: 'emotions',
+    loadChildren: () =>
+      import('./modules/emotions/emotions.module').then(
+        (m) => m.EmotionsModule
+      ),
   },
   {
     path: 'sounds',

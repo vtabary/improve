@@ -2,12 +2,7 @@
   <ng-container title><ng-content select="[title]"></ng-content></ng-container>
   <ng-container content>
     <div class="h-full flex flex-col">
-      <form
-        [formGroup]="form"
-        (ngSubmit)="onSearch()"
-        class="w-full"
-        *ngIf="searchKeys.length > 0"
-      >
+      <form [formGroup]="form" (ngSubmit)="onSearch()" class="w-full">
         <input
           type="text"
           formControlName="search"
@@ -32,6 +27,9 @@
       </div>
     </div>
     <ng-template #noResult>Aucun résultat</ng-template>
+  </ng-container>
+  <ng-container bottomContent>
+    <ng-content select="[bottomContent]"></ng-content>
   </ng-container>
   <ng-container buttons>
     <a [routerLink]="['..']" class="grow text-center">Retour</a>

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Use a single audio player in the sound page
+- Add a list of emotions
+- Add a general home page
+
 ## [0.6.0] - 2022-11-06
 
 ### Added

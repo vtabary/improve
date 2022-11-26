@@ -18,3 +18,24 @@ main .ui-link {
     @apply text-gray-600;
   }
 }
+
+.ui-card-container {
+  @apply flex;
+  @apply flex-row;
+  @apply flex-wrap;
+  @apply justify-center;
+}
+
+.ui-card-link {
+  @apply block;
+  @apply w-full;
+  @apply lg:w-1/3;
+  @apply xl:w-1/4;
+  @apply bg-gray-200;
+  @apply border-gray-500;
+  @apply border-8;
+  @apply border-white;
+  @apply border-solid;
+  @apply p-5;
+  @apply text-center;
+}

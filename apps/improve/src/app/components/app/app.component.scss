@@ -5,3 +5,47 @@
 main {
   @apply overflow-auto;
 }
+
+.ui-menu-entry {
+  @apply text-gray-300;
+  @apply hover:bg-gray-700;
+  @apply hover:text-white;
+  @apply px-3;
+  @apply py-2;
+  @apply rounded-md;
+  @apply text-sm;
+  @apply font-medium;
+}
+
+.ui-menu-entry--active {
+  @apply bg-gray-900;
+  @apply text-white;
+  @apply px-3;
+  @apply py-2;
+  @apply rounded-md;
+  @apply text-sm;
+  @apply font-medium;
+}
+
+.ui-burger-menu-entry {
+  @apply text-gray-300;
+  @apply hover:bg-gray-700;
+  @apply hover:text-white;
+  @apply block;
+  @apply px-3;
+  @apply py-2;
+  @apply rounded-md;
+  @apply text-base;
+  @apply font-medium;
+}
+
+.ui-burger-menu-entry--active {
+  @apply bg-gray-900;
+  @apply text-white;
+  @apply block;
+  @apply px-3;
+  @apply py-2;
+  @apply rounded-md;
+  @apply text-base;
+  @apply font-medium;
+}

@@ -1,0 +1,8 @@
+<ng-container *ngIf="item">
+  <span class="font-medium block p-2">{{ item.emotion }}</span>
+  <span
+    *ngFor="let category of item.categories; let isLast = last"
+    class="text-gray-400 block text-sm text-center"
+    >{{ category }}<ng-container *ngIf="!isLast">,</ng-container></span
+  >
+</ng-container>
