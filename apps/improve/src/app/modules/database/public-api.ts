@@ -19,3 +19,4 @@ export {
   IEmotion,
   EmotionsService,
 } from './services/emotions/emotions.service';
+export { IJob, JobsService } from './services/jobs/jobs.service';

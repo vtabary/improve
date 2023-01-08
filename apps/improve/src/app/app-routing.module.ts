@@ -33,6 +33,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'jobs',
+    loadChildren: () =>
+      import('./modules/jobs/jobs.module').then((m) => m.JobsModule),
+  },
+  {
     path: 'sounds',
     loadChildren: () =>
       import('./modules/sounds/sounds.module').then((m) => m.SoundsModule),

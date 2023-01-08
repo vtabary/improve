@@ -1,0 +1,6 @@
+<improve-list [list]="list" [searchKeys]="['job', 'descrîption', 'domain']">
+  <ng-container title>Liste des métiers</ng-container>
+  <ng-template #item let-item="item">
+    <improve-role-item [item]="item"></improve-role-item>
+  </ng-template>
+</improve-list>

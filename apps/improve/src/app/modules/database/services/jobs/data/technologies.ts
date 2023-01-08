@@ -1,0 +1,178 @@
+export const TECHNOLOGIES = [
+  {
+    job: 'Accompagnateur du changement',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Accompagnateur_du_changement',
+  },
+  {
+    job: 'Administrateur de réseaux',
+    description:
+      'Gère les équipements réseau (câblage, configuration des équipements réseaux, routage)',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Administrateur_r%C3%A9seaux',
+  },
+  {
+    job: 'Administrateur de système',
+    description: 'Administre les serveurs qui hébergent les services.',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Administrateur_syst%C3%A8me',
+  },
+  {
+    job: 'Administrateur de stockage',
+    description:
+      "Assure la mise à disposition et l'accès aux données selon les besoins et l'usage",
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: undefined,
+  },
+  {
+    job: 'Administrateur de bases de données',
+    description:
+      "Assure l'administration des bases de données. Il peut aussi être chargé de la modélisation des données",
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Administrateur_de_bases_de_donn%C3%A9es',
+  },
+  {
+    job: 'Administrateur de sécurité',
+    description:
+      "Assure la mise en place de la politique de sécurité. Il est responsable des accès internes et externes (droits applicatifs, flux réseaux), de la sécurité et de l'intégrité des données.",
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Administrateur_S%C3%A9curit%C3%A9',
+  },
+  {
+    job: 'Analyste',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Analyste_(informatique)',
+  },
+  {
+    job: 'Architecte de système',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: undefined,
+  },
+  {
+    job: 'Community manager',
+    description:
+      "Est spécialisé dans l'intelligence humaine et artificielle. Il travaille sur la cognition humaine et modélise et conçoit des machines intelligentes pouvant aider les utilisateurs dans leur travail ou leur vie quotidienne",
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Community_manager',
+  },
+  {
+    job: 'Cogniticien',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Cogniticien',
+  },
+  {
+    job: 'Développeur',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/D%C3%A9veloppeur',
+  },
+  {
+    job: 'Développeur de jeux vidéo',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/D%C3%A9veloppeur_de_jeux_vid%C3%A9o',
+  },
+  {
+    job: 'Directeur technique',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Directeur_technique',
+  },
+  {
+    job: 'Graphiste',
+    description: 'Conçoit et crée les éléments graphiques.',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Graphiste',
+  },
+  {
+    job: 'Illustrateur',
+    description: 'Crée les parties illustrées du site.',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Illustrateur',
+  },
+  {
+    job: 'Intégrateur',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Int%C3%A9grateur',
+  },
+  {
+    job: 'Programmeur',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Programmeur',
+  },
+  {
+    job: 'Référenceur',
+    description:
+      'Favorise le référencement naturel du site auprès des moteurs de recherche, il intervient dès la conception du site.',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: undefined,
+  },
+  {
+    job: 'Technicien de maintenance',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Technicien_de_maintenance',
+  },
+  {
+    job: 'Technicien hotline',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Technicien_hotline',
+  },
+  {
+    job: 'Technicien réseau',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Technicien_r%C3%A9seau',
+  },
+  {
+    job: 'Webdesigner',
+    description: '',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Webdesigner',
+  },
+  {
+    job: 'Webmaster',
+    description:
+      'Gère le site web et le met à jour. Il est souvent responsable du développement du trafic.',
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: 'https://fr.wikipedia.org/wiki/Webmaster',
+  },
+  {
+    job: 'Webmarketeur',
+    description:
+      "Elabore et met en place avec les autres acteurs, la stratégie marketing internet du site ou de l'organisation.",
+    domain: 'Technologies',
+    source: 'https://fr.wikipedia.org/wiki/Liste_des_m%C3%A9tiers',
+    link: undefined,
+  },
+];

@@ -24,6 +24,7 @@ main .ui-link {
   @apply flex-row;
   @apply flex-wrap;
   @apply justify-center;
+  @apply p-1;
 }
 
 .ui-card-link {

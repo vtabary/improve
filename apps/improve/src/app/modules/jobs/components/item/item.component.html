@@ -1,0 +1,9 @@
+<ng-container *ngIf="item">
+  <span class="font-medium block p-2"
+    >{{ item.job
+    }}<ng-container *ngIf="item.description">
+      : {{ item.description }}</ng-container
+    >
+  </span>
+  <span class="text-gray-400 block text-sm text-center">{{ item.domain }}</span>
+</ng-container>
