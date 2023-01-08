@@ -1,6 +1,7 @@
 {
+  "name": "improve",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "root": "apps/improve",
   "sourceRoot": "apps/improve/src",
   "prefix": "improve",
   "targets": {
@@ -37,7 +38,7 @@
             {
               "type": "initial",
               "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
@@ -93,9 +94,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/improve"],
+      "outputs": ["{workspaceRoot}/coverage/apps/improve"],
       "options": {
-        "jestConfig": "apps/improve/jest.config.js",
+        "jestConfig": "apps/improve/jest.config.ts",
         "passWithNoTests": true
       }
     }

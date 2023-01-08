@@ -19,11 +19,11 @@ export class ClassesService {
     return this.database.get(this.dbKey) || [];
   }
 
-  public add(label: string): void {
+  public add(label?: string | null): void {
     const list = this.list();
 
     // Labels must be uniques
-    if (list.includes(label)) {
+    if (!label || list.includes(label)) {
       return;
     }
 

@@ -15,7 +15,7 @@ export class ClassSelectorComponent {
    * @internal
    */
   public form = new FormGroup({
-    label: new FormControl(this.currentClassService.get()),
+    label: new FormControl<string>(this.currentClassService.get()),
   });
   /**
    * @internal

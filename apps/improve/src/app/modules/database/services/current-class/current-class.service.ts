@@ -23,7 +23,10 @@ export class CurrentClassService {
     return this.database.get(this.dbKey) || this.classes.list()[0] || 'default';
   }
 
-  public set(currentClass: string): void {
+  public set(currentClass?: string | null): void {
+    if (!currentClass) {
+      return;
+    }
     this.database.set(this.dbKey, currentClass);
     this._change.next(currentClass);
   }

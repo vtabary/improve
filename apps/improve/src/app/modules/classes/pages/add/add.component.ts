@@ -35,7 +35,7 @@ export class AddComponent {
    * @internal
    */
   public form = new FormGroup({
-    label: new FormControl(null, [
+    label: new FormControl<string | null>(null, [
       Validators.required,
       Validators.minLength(3),
       labelMustBeUnique(this.classes.list()),

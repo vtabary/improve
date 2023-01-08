@@ -1,5 +1,6 @@
 {
-  "root": "apps/improve-e2e",
+  "name": "improve-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/improve-e2e/src",
   "projectType": "application",
   "targets": {
