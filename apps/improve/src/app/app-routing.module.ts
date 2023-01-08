@@ -38,6 +38,11 @@ const routes: Routes = [
       import('./modules/jobs/jobs.module').then((m) => m.JobsModule),
   },
   {
+    path: 'roles',
+    loadChildren: () =>
+      import('./modules/roles/roles.module').then((m) => m.RolesModule),
+  },
+  {
     path: 'sounds',
     loadChildren: () =>
       import('./modules/sounds/sounds.module').then((m) => m.SoundsModule),

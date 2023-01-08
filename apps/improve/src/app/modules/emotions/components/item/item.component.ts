@@ -8,5 +8,5 @@ import { IEmotion } from '../../../database/public-api';
 })
 export class ItemComponent {
   @Input()
-  public item: IEmotion | null = null;
+  public item?: IEmotion | null = null;
 }

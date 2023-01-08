@@ -10,5 +10,6 @@ import { ListComponent } from './pages/list/list.component';
 @NgModule({
   declarations: [HomeComponent, RandomComponent, ListComponent, ItemComponent],
   imports: [CommonModule, SharedModule, JobsRoutingModule],
+  exports: [ItemComponent],
 })
 export class JobsModule {}

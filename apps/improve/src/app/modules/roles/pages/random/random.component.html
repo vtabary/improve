@@ -1,0 +1,16 @@
+<improve-layout-with-buttons>
+  <ng-container title>Personnage aléatoire</ng-container>
+
+  <ng-container content>
+    Métier
+    <improve-job-item [item]="job"></improve-job-item>
+    Emotion
+    <improve-emotions-item [item]="emotion"></improve-emotions-item>
+  </ng-container>
+
+  <ng-container buttons>
+    <button class="ui-link grow" type="button" (click)="generate()">
+      Générer un nouveau personnage
+    </button>
+  </ng-container>
+</improve-layout-with-buttons>

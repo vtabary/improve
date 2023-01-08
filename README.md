@@ -6,15 +6,12 @@ A tool to help to improve
 
 The UI is French only for now
 
-- Theme generator and list
-- Emotion generator and list
-- Category generator and list
-- Articulation exercice generator and list
+- Generators and lists for: themes, roles, jobs, emotion, category, articulation exercice
 - Class support
 
 ## TODO
 
-- A generator for roles : emotions, first name, last name, job, disability, ocd, ...
+- A generator for : first name, last name, disability, ocd, ...
 - Training exercices
 - Add some tools in sounds : repeat mode, update player design, ...
 - Free musics

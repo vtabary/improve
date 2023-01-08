@@ -10,5 +10,6 @@ import { EmoitionsRoutingModule } from './emotions-routing.module';
 @NgModule({
   declarations: [ItemComponent, HomeComponent, ListComponent, RandomComponent],
   imports: [CommonModule, SharedModule, EmoitionsRoutingModule],
+  exports: [ItemComponent],
 })
 export class EmotionsModule {}

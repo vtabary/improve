@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IJob } from '../../../database/services/jobs/jobs.service';
 
 @Component({
-  selector: 'improve-role-item',
+  selector: 'improve-job-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss'],
 })

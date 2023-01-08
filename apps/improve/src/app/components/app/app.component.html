@@ -26,6 +26,12 @@
               >Thèmes</a
             >
             <a
+              routerLink="/roles"
+              routerLinkActive="ui-menu-entry--active"
+              class="ui-menu-entry"
+              >Personnages</a
+            >
+            <a
               routerLink="/jobs"
               routerLinkActive="ui-menu-entry--active"
               class="ui-menu-entry"
@@ -129,6 +135,13 @@
         >Thèmes</a
       >
       <a
+        routerLink="/roles"
+        (click)="onToggleMenu()"
+        routerLinkActive="ui-burger-menu-entry--active"
+        class="ui-burger-menu-entry"
+        >Personnages</a
+      >
+      <a
         routerLink="/jobs"
         (click)="onToggleMenu()"
         routerLinkActive="ui-burger-menu-entry--active"
@@ -141,13 +154,6 @@
         routerLinkActive="ui-burger-menu-entry--active"
         class="ui-burger-menu-entry"
         >Emotions</a
-      >
-      <a
-        routerLink="/roles"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Personnages</a
       >
       <a
         routerLink="/sounds"
