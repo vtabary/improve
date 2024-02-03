@@ -1,7 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "improve": "apps/improve",
-    "improve-e2e": "apps/improve-e2e"
-  }
-}
