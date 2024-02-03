@@ -1,0 +1,8 @@
+<improve-list [list]="list" [searchKeys]="['theme']">
+  <ng-container title>Liste des ressources</ng-container>
+  <ng-template #item let-item="item" let-i="index">
+    <a [href]="item.url" target="_blank">{{ item.label }}</a
+    >&nbsp;<improve-feather-icon icon="external-link"></improve-feather-icon>
+    <span class="text-gray-400 block">{{ item.description }}</span>
+  </ng-template>
+</improve-list>

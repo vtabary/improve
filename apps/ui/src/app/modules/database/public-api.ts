@@ -20,3 +20,8 @@ export {
   EmotionsService,
 } from './services/emotions/emotions.service';
 export { IJob, JobsService } from './services/jobs/jobs.service';
+/**
+ * Resources
+ */
+export { ResourcesService } from './services/resources/resources.service';
+export { IResource } from './services/resources/data';

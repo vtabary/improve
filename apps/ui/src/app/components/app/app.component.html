@@ -55,6 +55,12 @@
               class="ui-menu-entry"
               >Articulations</a
             >
+            <a
+              routerLink="/resources"
+              routerLinkActive="ui-menu-entry--active"
+              class="ui-menu-entry"
+              >Resources</a
+            >
           </div>
         </div>
       </div>
@@ -168,6 +174,13 @@
         routerLinkActive="ui-burger-menu-entry--active"
         class="ui-burger-menu-entry"
         >Articulations</a
+      >
+      <a
+        routerLink="/resources"
+        (click)="onToggleMenu()"
+        routerLinkActive="ui-burger-menu-entry--active"
+        class="ui-burger-menu-entry"
+        >Resources</a
       >
     </div>
     <div class="border-t border-gray-700 pt-4 pb-3">

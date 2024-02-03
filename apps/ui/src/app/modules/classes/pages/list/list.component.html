@@ -1,11 +1,18 @@
 <improve-layout-with-buttons>
   <ng-container title>Liste des classes</ng-container>
   <ng-container content>
+    <p class="m-2">
+      Les "classes" permettent de conserver une trace des propositions déjà
+      utilisées pour votre séance. Cela évite d'avoir plusieurs fois les mêmes
+      propositions.
+    </p>
+
     <div class="px-2">
       <ul
         class="divide-y divide-gray-200"
         *ngIf="currentClass$ | async as currentClass"
       >
+        @if (classList.length > 0) {
         <li class="py-4 px-2" *ngFor="let item of classList">
           <button
             type="button"
@@ -18,6 +25,12 @@
             >(courant)</span
           >
         </li>
+        } @else {
+        <li class="py-4 px-2">
+          <span class="mr-1"> Par défaut </span>
+          <span class="text-gray-200">(courant)</span>
+        </li>
+        }
       </ul>
     </div>
   </ng-container>

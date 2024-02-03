@@ -27,6 +27,11 @@
             "glob": "users.svg",
             "input": "./node_modules/feather-icons/dist/icons",
             "output": "/assets/feather-icons"
+          },
+          {
+            "glob": "external-link.svg",
+            "input": "./node_modules/feather-icons/dist/icons",
+            "output": "/assets/feather-icons"
           }
         ],
         "styles": ["apps/ui/src/styles.scss"],

@@ -43,6 +43,13 @@ const routes: Routes = [
       import('./modules/roles/roles.module').then((m) => m.RolesModule),
   },
   {
+    path: 'resources',
+    loadChildren: () =>
+      import('./modules/resources/resources.module').then(
+        (m) => m.ResourcesModule
+      ),
+  },
+  {
     path: 'sounds',
     loadChildren: () =>
       import('./modules/sounds/sounds.module').then((m) => m.SoundsModule),
