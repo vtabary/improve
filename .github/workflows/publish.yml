@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '18'
       - run: yarn install
-      - run: npx nx build ui --base-href=/ui/
+      - run: npx nx build ui --base-href=/improve/
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
