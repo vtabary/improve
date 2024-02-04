@@ -1,113 +1,118 @@
 <nav class="bg-gray-800">
   <div class="mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
-      <div class="flex items-center">
+    <div
+      class="flex md:h-16 md:!h-16 items-stretch md:items-center justify-between"
+      [style.height]="menuOpened ? 'auto' : null"
+    >
+      <div
+        class="flex md:items-center flex-col md:flex-row mb-2 md:mb-0 flex-grow"
+        [style.align-items]="menuOpened ? 'start' : null"
+      >
         <div class="flex-shrink-0">
           <a
             routerLink="/"
-            class="flex flex-row items-center rounded-full bg-gray-800 p-1 text-gray-400 text-xl hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 gap-2"
+            class="my-2 flex flex-row items-center bg-gray-800 p-1 text-gray-400 text-xl hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 gap-2"
           >
             <improve-feather-icon icon="users"></improve-feather-icon>
             <span>Improve</span>
           </a>
         </div>
-        <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-4">
-            <a
-              routerLink="/categories"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Catégories</a
-            >
-            <a
-              routerLink="/themes"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Thèmes</a
-            >
-            <a
-              routerLink="/roles"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Personnages</a
-            >
-            <a
-              routerLink="/jobs"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Métiers</a
-            >
-            <a
-              routerLink="/emotions"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Emotions</a
-            >
-            <a
-              routerLink="/sounds"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Sons</a
-            >
-            <a
-              routerLink="/articulations"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Articulations</a
-            >
-            <a
-              routerLink="/resources"
-              routerLinkActive="ui-menu-entry--active"
-              class="ui-menu-entry"
-              >Resources</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="hidden md:block">
-        <div class="ml-4 flex items-center md:ml-6">
-          <!-- Profile dropdown -->
-          <div class="relative ml-3">
-            <div>
+        <div
+          class="hidden md:block md:flex-grow"
+          [style.display]="menuOpened ? 'block' : null"
+        >
+          <div class="md:ml-10 flex items-baseline space-x-4">
+            <div cdkMenuBar>
               <button
                 type="button"
-                class="rounded-full bg-gray-800 p-1 text-gray-400 text-xl hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                id="user-menu-button"
-                aria-expanded="false"
-                aria-haspopup="true"
-                (click)="onToggleMenu()"
+                [cdkMenuTriggerFor]="scenes"
+                cdkMenuItem
+                class="ui-menu-entry"
               >
-                <span class="sr-only">Ouvrir le menu utilisateur</span>
-                <improve-feather-icon icon="settings"></improve-feather-icon>
+                Impros&nbsp;<improve-feather-icon
+                  icon="chevron-down"
+                ></improve-feather-icon>
               </button>
-            </div>
-            <div
-              *ngIf="menuOpened"
-              class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="user-menu-button"
-              tabindex="-1"
-            >
+              <button
+                type="button"
+                [cdkMenuTriggerFor]="roles"
+                cdkMenuItem
+                class="ui-menu-entry"
+              >
+                Personnages&nbsp;<improve-feather-icon
+                  icon="chevron-down"
+                ></improve-feather-icon>
+              </button>
+              <button
+                type="button"
+                [cdkMenuTriggerFor]="tools"
+                cdkMenuItem
+                class="ui-menu-entry"
+              >
+                Outils&nbsp;<improve-feather-icon
+                  icon="chevron-down"
+                ></improve-feather-icon>
+              </button>
+              <button
+                type="button"
+                [cdkMenuTriggerFor]="training"
+                cdkMenuItem
+                class="ui-menu-entry"
+              >
+                Echauffements&nbsp;<improve-feather-icon
+                  icon="chevron-down"
+                ></improve-feather-icon>
+              </button>
               <a
-                routerLink="/classes"
-                class="block px-4 py-2 text-sm text-gray-700"
-                role="menuitem"
-                tabindex="-1"
-                id="user-menu-item-0"
-                >Gérer les cours</a
+                cdkMenuItem
+                routerLink="/resources"
+                routerLinkActive="ui-menu-entry--active"
+                class="ui-menu-entry"
+                ><improve-feather-icon
+                  icon="external-link"
+                ></improve-feather-icon
+                >&nbsp;Ressources</a
+              >
+              <a
+                cdkMenuItem
+                routerLink="/about"
+                routerLinkActive="ui-menu-entry--active"
+                class="ui-menu-entry"
+                ><improve-feather-icon icon="help-circle"></improve-feather-icon
+                >&nbsp;A propos</a
               >
             </div>
           </div>
         </div>
+        <div
+          class="hidden md:block"
+          [style.display]="menuOpened ? 'block' : null"
+        >
+          <div class="flex items-center">
+            <!-- Profile dropdown -->
+            <div cdkMenuBar class="ui-menu">
+              <button
+                type="button"
+                class="ui-menu-entry"
+                [cdkMenuTriggerFor]="configuration"
+                cdkMenuItem
+                title="Ouvrir le menu utilisateur"
+              >
+                {{ currentClass$ | async }}&nbsp;<improve-feather-icon
+                  icon="settings"
+                ></improve-feather-icon>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="-mr-2 flex md:hidden">
+      <div class="-mr-2 my-2 flex md:hidden items-start">
         <button
           type="button"
           class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
           aria-controls="mobile-menu"
           aria-expanded="false"
-          (click)="onToggleMenu()"
+          (click)="onToggleMobileMenu()"
         >
           <span class="sr-only">Ouvrir le menu principal</span>
           <improve-feather-icon
@@ -122,85 +127,98 @@
       </div>
     </div>
   </div>
-
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div *ngIf="menuOpened" class="md:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-      <a
-        routerLink="/categories"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Catégories</a
-      >
-      <a
-        routerLink="/themes"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Thèmes</a
-      >
-      <a
-        routerLink="/roles"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Personnages</a
-      >
-      <a
-        routerLink="/jobs"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Métiers</a
-      >
-      <a
-        routerLink="/emotions"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Emotions</a
-      >
-      <a
-        routerLink="/sounds"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Sons</a
-      >
-      <a
-        routerLink="/articulations"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Articulations</a
-      >
-      <a
-        routerLink="/resources"
-        (click)="onToggleMenu()"
-        routerLinkActive="ui-burger-menu-entry--active"
-        class="ui-burger-menu-entry"
-        >Resources</a
-      >
-    </div>
-    <div class="border-t border-gray-700 pt-4 pb-3">
-      <div class="flex items-center px-5">
-        <div class="text-base font-medium leading-none text-white">
-          Cours : {{ currentClass$ | async }}
-        </div>
-        <a
-          routerLink="/classes"
-          (click)="onToggleMenu()"
-          class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-        >
-          <span class="sr-only">Gérer les cours</span>
-          <improve-feather-icon icon="settings"></improve-feather-icon>
-        </a>
-      </div>
-    </div>
-  </div>
 </nav>
 
 <main class="grow">
   <router-outlet></router-outlet>
 </main>
+
+<ng-template #scenes>
+  <div class="ui-menu" cdkMenu>
+    <a
+      cdkMenuItem
+      routerLink="/themes"
+      routerLinkActive="ui-menu-entry--active"
+      class="ui-menu-entry"
+    >
+      <improve-feather-icon icon="edit-2"></improve-feather-icon>
+      Thèmes</a
+    >
+    <a
+      cdkMenuItem
+      routerLink="/categories"
+      routerLinkActive="ui-menu-entry--active"
+      class="ui-menu-entry"
+    >
+      <improve-feather-icon icon="box"></improve-feather-icon>
+      Catégories</a
+    >
+  </div>
+</ng-template>
+
+<ng-template #roles>
+  <div class="ui-menu" cdkMenu>
+    <a
+      routerLink="/roles"
+      routerLinkActive="ui-menu-entry--active"
+      class="ui-menu-entry"
+    >
+      <improve-feather-icon icon="user"></improve-feather-icon>
+      Profil complet</a
+    >
+    <a
+      cdkMenuItem
+      routerLink="/jobs"
+      routerLinkActive="ui-menu-entry--active"
+      class="ui-menu-entry"
+    >
+      <improve-feather-icon icon="briefcase"></improve-feather-icon>
+      Métiers</a
+    >
+    <a
+      cdkMenuItem
+      routerLink="/emotions"
+      routerLinkActive="ui-menu-entry--active"
+      class="ui-menu-entry"
+    >
+      <improve-feather-icon icon="activity"></improve-feather-icon>
+      Emotions</a
+    >
+  </div>
+</ng-template>
+
+<ng-template #training>
+  <div class="ui-menu" cdkMenu>
+    <a
+      cdkMenuItem
+      routerLink="/articulations"
+      routerLinkActive="ui-menu-entry--active"
+      class="ui-menu-entry"
+    >
+      <improve-feather-icon icon="wind"></improve-feather-icon>
+      Articulations</a
+    >
+  </div>
+</ng-template>
+
+<ng-template #tools>
+  <div class="ui-menu" cdkMenu>
+    <a
+      cdkMenuItem
+      routerLink="/sounds"
+      routerLinkActive="ui-menu-entry--active"
+      class="ui-menu-entry"
+    >
+      <improve-feather-icon icon="music"></improve-feather-icon>
+      Sons</a
+    >
+  </div>
+</ng-template>
+
+<ng-template #configuration>
+  <div class="ui-menu" cdkMenu>
+    <a cdkMenuItem routerLink="/classes" class="ui-menu-entry"
+      >Gérer les cours</a
+    >
+  </div>
+</ng-template>

@@ -1,8 +1,9 @@
 <ng-container *ngIf="item">
   <span class="font-medium block p-2">{{ item.emotion }}</span>
-  <span
-    *ngFor="let category of item.categories; let isLast = last"
-    class="text-gray-400 block text-sm pl-2"
-    >{{ category }}<ng-container *ngIf="!isLast">,</ng-container></span
-  >
+  <p class="text-gray-400 text-sm pl-2">
+    <ng-container *ngFor="let category of item.categories; let isLast = last"
+      >{{ category
+      }}<ng-container *ngIf="!isLast">, </ng-container></ng-container
+    >
+  </p>
 </ng-container>

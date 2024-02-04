@@ -6,15 +6,39 @@ main {
   @apply overflow-auto;
 }
 
+.ui-menu {
+  @apply bg-gray-700;
+  @apply rounded-md;
+}
+
 .ui-menu-entry {
   @apply text-gray-300;
-  @apply hover:bg-gray-700;
+  @apply hover:bg-gray-600;
   @apply hover:text-white;
   @apply px-3;
   @apply py-2;
   @apply rounded-md;
   @apply text-sm;
   @apply font-medium;
+  @apply select-none;
+  @apply cursor-pointer;
+  @apply border-none;
+
+  @apply block;
+  @apply md:inline-block;
+}
+
+.ui-menu .ui-menu-entry {
+  @apply block;
+  @apply rounded-none;
+}
+
+.ui-menu .ui-menu-entry:first-child {
+  @apply rounded-t-md;
+}
+
+.ui-menu .ui-menu-entry:last-child {
+  @apply rounded-b-md;
 }
 
 .ui-menu-entry--active {

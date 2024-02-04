@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Menu can now support more entries
+- Add an about page
+
 ## [0.10.2] - 2024-02-04
 
 ### Fixed

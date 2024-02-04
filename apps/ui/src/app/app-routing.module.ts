@@ -7,6 +7,11 @@ const routes: Routes = [
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'about',
+    loadChildren: () =>
+      import('./modules/about/about.module').then((m) => m.AboutModule),
+  },
+  {
     path: 'articulations',
     loadChildren: () =>
       import('./modules/articulations/articulations.module').then(
@@ -61,7 +66,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/themes',
+    redirectTo: '/',
   },
 ];
 

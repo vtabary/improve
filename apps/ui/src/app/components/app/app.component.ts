@@ -3,7 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
 } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { CurrentClassService } from '../../modules/database/public-api';
 
 @Component({
@@ -20,20 +20,34 @@ export class AppComponent {
   /**
    * @internal
    */
+  public cogOpened = false;
+  /**
+   * @internal
+   */
   public currentClass$: Observable<string>;
 
   constructor(
     private cdr: ChangeDetectorRef,
     currentClassService: CurrentClassService
   ) {
-    this.currentClass$ = currentClassService.change;
+    this.currentClass$ = currentClassService.change.pipe(
+      map((value) => (value === 'default' ? 'Par défaut' : value))
+    );
   }
 
   /**
    * @internal
    */
-  public onToggleMenu(): void {
+  public onToggleMobileMenu(): void {
     this.menuOpened = !this.menuOpened;
+    this.cdr.detectChanges();
+  }
+
+  /**
+   * @internal
+   */
+  public onToggleCogMenu(): void {
+    this.cogOpened = !this.cogOpened;
     this.cdr.detectChanges();
   }
 }
