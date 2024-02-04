@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.2] - 2024-02-04
+
 ### Fixed
 
 - Sounds couldn't be changed without a page refresh
