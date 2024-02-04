@@ -2,10 +2,16 @@
   <ng-container title>Personnage aléatoire</ng-container>
 
   <ng-container content>
-    Métier
-    <improve-job-item [item]="job"></improve-job-item>
-    Emotion
-    <improve-emotions-item [item]="emotion"></improve-emotions-item>
+    <div class="m-2">
+      <h2 class="">Métier</h2>
+      <div class="border-l-2 border-gray-500 ml-4">
+        <improve-job-item [item]="job"></improve-job-item>
+      </div>
+      <h2 class="text-lg">Emotion</h2>
+      <div class="border-l-2 border-gray-500 ml-4">
+        <improve-emotions-item [item]="emotion"></improve-emotions-item>
+      </div>
+    </div>
   </ng-container>
 
   <ng-container buttons>

@@ -1,12 +1,13 @@
 import {
+  ChangeDetectionStrategy,
   Component,
-  ContentChild,
   ElementRef,
   EventEmitter,
   Input,
   OnChanges,
   Output,
   SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -19,6 +20,7 @@ export interface IAudio {
   selector: 'improve-audio-player',
   templateUrl: './audio-player.component.html',
   styleUrls: ['./audio-player.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AudioPlayerComponent implements OnChanges {
   @Input()
@@ -29,7 +31,7 @@ export class AudioPlayerComponent implements OnChanges {
     return this.sourceChange$.asObservable();
   }
 
-  @ContentChild('player', { read: ElementRef })
+  @ViewChild('player', { read: ElementRef })
   public player?: ElementRef<HTMLAudioElement>;
 
   private sourceChange$ = new EventEmitter();
@@ -38,11 +40,33 @@ export class AudioPlayerComponent implements OnChanges {
     if (!changes['sources']) {
       return;
     }
+
     this.sourceChange$.emit(this);
   }
 
   public async play(): Promise<void> {
-    this.player?.nativeElement.load();
-    await this.player?.nativeElement.play();
+    if (!this.player) {
+      return;
+    }
+
+    this.player.nativeElement.load();
+    await this.player.nativeElement.play();
+  }
+
+  public pause(): void {
+    if (!this.player) {
+      return;
+    }
+
+    this.player.nativeElement.pause();
+  }
+
+  private reset(): void {
+    if (!this.player) {
+      return;
+    }
+
+    this.player.nativeElement.pause();
+    this.player.nativeElement.currentTime = 0;
   }
 }

@@ -1,5 +1,9 @@
 <improve-list [list]="list" [searchKeys]="['label']">
   <ng-container title>Liste des sons</ng-container>
+  <ng-container description
+    >Voici une liste non-exhaustive de sons disponibles. D'autres seront
+    ajoutés. plus tard</ng-container
+  >
   <ng-template #item let-item="item">
     <improve-sounds-item
       [item]="item"

@@ -7,6 +7,10 @@
     </div>
   </header>
 
+  <p class="m-2 [&:empty]:hidden">
+    <ng-content select="[description]"></ng-content>
+  </p>
+
   <div class="grow overflow-y-auto overflow-x-hidden">
     <ng-content></ng-content>
     <ng-content select="[content]"></ng-content>

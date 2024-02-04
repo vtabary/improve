@@ -1,5 +1,8 @@
 <improve-layout-with-buttons>
   <ng-container title><ng-content select="[title]"></ng-content></ng-container>
+  <ng-container description
+    ><ng-content select="[description]"></ng-content
+  ></ng-container>
   <ng-container content>
     <div class="h-full flex flex-col">
       <form [formGroup]="form" (ngSubmit)="onSearch()" class="w-full">

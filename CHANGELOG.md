@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Sounds couldn't be changed without a page refresh
+- Update some item styles in application
+
 ## [0.10.1] - 2024-02-03
 
 ### Fixed
